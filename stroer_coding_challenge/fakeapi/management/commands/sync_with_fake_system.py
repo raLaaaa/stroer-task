@@ -9,8 +9,6 @@ from fakeapi.serializers.post_serializer import PostSerializer
 from fakeapi.serializers.comment_serializer import CommentSerializer
 from fakeapi.models import Post, Comment
 
-logger = logging.getLogger(__name__)
-
 
 class Command(BaseCommand):
     help = "Syncs our db with fake api."
