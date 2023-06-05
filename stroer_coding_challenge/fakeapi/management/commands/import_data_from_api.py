@@ -16,7 +16,6 @@ class Command(BaseCommand):
     help = "Fetches Posts & Comments from the FakeAPI. This will result in a fresh database state. All objects get reimported."
 
     def requestPosts(self):
-
         self.stdout.write("Cleaning old posts of database...")
         Post.objects.all().delete()
 
@@ -30,7 +29,6 @@ class Command(BaseCommand):
         self.stdout.write(f"Successfully created {len(post_serializer.data)} posts.")
 
     def requestComments(self):
-
         self.stdout.write("Cleaning old comments of database...")
         Comment.objects.all().delete()
 
@@ -46,7 +44,6 @@ class Command(BaseCommand):
         )
 
     def handle(self, *args, **options):
-
         self.stdout.write(f"--------------------")
         self.stdout.write(f"Importing data from fake api")
         with transaction.atomic():
