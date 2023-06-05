@@ -1,0 +1,31 @@
+version: '3'
+services:
+  database:
+    image: postgres
+    volumes:
+      - stroer-db:/var/lib/postgresql/data
+    ports:
+    - 5432:5432
+    environment:
+      - POSTGRES_DB=stroer
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=1234
+  web:
+    build: .
+    command: >
+      sh -c "poetry run python stroer_coding_challenge/manage.py migrate &&
+             poetry run python stroer_coding_challenge/manage.py setup_testing_user &&
+             poetry run python stroer_coding_challenge/manage.py import_data_from_api &&
+             poetry run python stroer_coding_challenge/manage.py runserver 0.0.0.0:8000"
+    volumes:
+      - stroer-db:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - database
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=1234
+
+volumes:
+  stroer-db:

@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "stroertask"
+version = "0.1.0"
+description = "The stroer coding task to create a simple REST API to interact with Fake API"
+authors = ["marcel.schepaniak@yahoo.de"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+django = "^3.1.6"
+psycopg2-binary = "^2.9.3"
+djangorestframework = "^3.11.0"
+requests = "^2.31.0"
+
+[tool.poetry.dev-dependencies]
+black = "^23.3.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
