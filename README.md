@@ -87,3 +87,8 @@ The application has the following routes:
     PUT - fakeapi/v1/posts/<int:post_server_id>/comments/update/<int:comment_server_id>/
     DELETE - fakeapi/v1/posts/<int:post_server_id>/comments/delete/<int:comment_server_id>/
 ```
+
+### Testing
+
+The project contains basic testcases for views, model and authentication.
+You can run them by `python .\manage.py test`.
