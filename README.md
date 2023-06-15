@@ -1,5 +1,7 @@
 ## Ströer SE & Co. KGaA - Job Coding Task
 
+This repository contains a task and a possible solution for an application as Python / Django developer.
+
 ###  Task Description
 
 Create a simple REST API to interact with the Fake API in JSONPlaceholder - Free Fake REST API
